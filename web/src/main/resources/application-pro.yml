@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:mysql://xxx.xxx.xxx.xxx:3306/oauth?allowMultiQueries=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Hongkong
+    username: roots
+    password: Zfx980912
+    driver-class-name: com.mysql.jdbc.Driver
+
+#ES7.5.1连接配置
+elasticsearch:
+  scheme: http
+  ip: xxx.xxx.xxx.xxx
+  port: 9200
+  username: elastic
+  password: Supermap.
+  masterIndex: szsw_data

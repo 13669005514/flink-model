@@ -1,0 +1,17 @@
+spring:
+  datasource:
+      url: jdbc:postgresql://192.168.1.101:5432/PSH_GW
+      username: postgres
+      password: supermap
+      driver-class-name: org.postgresql.Driver
+#ES7.5.1连接配置
+elasticsearch:
+  scheme: http
+  ip: xxx.xxx.xxx.xxx
+  port: 9200
+  username: elastic
+  password: Supermap.
+  masterIndex: szsw_data
+
+
+

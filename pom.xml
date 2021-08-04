@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.5.RELEASE</version>
+    </parent>
+
+    <groupId>com.supermap.model</groupId>
+    <artifactId>model</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>web</module>
+        <module>common</module>
+    </modules>
+    <packaging>pom</packaging>
+    <name>model</name>
+    <description>深圳水务项目</description>
+
+    <properties>
+        <!-- Environment Settings -->
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- Spring Settings -->
+        <pg.version>42.2.5</pg.version>
+        <mybaits.version>3.1.2</mybaits.version>
+        <lombok.version>1.16.20</lombok.version>
+        <guava.version>27.1-jre</guava.version>
+        <jackson.version>2.9.9</jackson.version>
+        <json.version>1.2.58</json.version>
+        <page.version>5.1.10</page.version>
+        <jsqlparser.version>2.1</jsqlparser.version>
+        <cors.version>1.9.1</cors.version>
+        <hutool.version>4.6.2</hutool.version>
+        <common.version>2.6</common.version>
+        <vividsolutions.version>1.14.0</vividsolutions.version>
+        <elasticsearch.version>7.5.1</elasticsearch.version>
+        <logstash.version>6.2</logstash.version>
+        <swagger.version>3.0.0</swagger.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${pg.version}</version>
+            </dependency>
+
+            <!--&lt;!&ndash; https://mvnrepository.com/artifact/com.alibaba/druid &ndash;&gt;-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybaits.version}</version>
+            </dependency>
+
+            <!--&lt;!&ndash;lombok&ndash;&gt;-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!--&lt;!&ndash;guava&ndash;&gt;-->
+            <!--&lt;!&ndash; https://mvnrepository.com/artifact/com.google.guava/guava &ndash;&gt;-->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+<!--            <dependency>-->
+<!--                <groupId>io.springfox</groupId>-->
+<!--                <artifactId>springfox-swagger2</artifactId>-->
+<!--                <version>${swagger.version}</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>io.springfox</groupId>-->
+<!--                <artifactId>springfox-swagger-ui</artifactId>-->
+<!--                <version>${swagger.version}</version>-->
+<!--            </dependency>-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${json.version}</version>
+            </dependency>
+            <!--分页插件-->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper</artifactId>
+                <version>${page.version}</version>
+            </dependency>
+            <!-- pagehelper 依赖 -->
+            <dependency>
+                <groupId>com.github.jsqlparser</groupId>
+                <artifactId>jsqlparser</artifactId>
+                <version>${jsqlparser.version}</version>
+            </dependency>
+
+            <!--Tomcat通过CORS解决跨域问题 web.xml也要配置-->
+            <dependency>
+                <groupId>com.thetransactioncompany</groupId>
+                <artifactId>cors-filter</artifactId>
+                <version>${cors.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>${common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${common.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/com.vividsolutions/jts -->
+            <dependency>
+                <groupId>com.vividsolutions</groupId>
+                <artifactId>jts</artifactId>
+                <version>1.13</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.vividsolutions</groupId>
+                <artifactId>jts-core</artifactId>
+                <version>${vividsolutions.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.locationtech.jts/jts-core -->
+            <dependency>
+                <groupId>org.locationtech.jts</groupId>
+                <artifactId>jts-core</artifactId>
+                <version>1.16.0</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.elasticsearch.client</groupId>
+                <artifactId>elasticsearch-rest-high-level-client</artifactId>
+                <version>${elasticsearch.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.elasticsearch</groupId>
+                <artifactId>elasticsearch</artifactId>
+                <version>${elasticsearch.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.elasticsearch.client</groupId>
+                <artifactId>elasticsearch-rest-client</artifactId>
+                <version>${elasticsearch.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>net.logstash.logback</groupId>
+                <artifactId>logstash-logback-encoder</artifactId>
+                <version>${logstash.version}</version>
+            </dependency>
+
+            <!--springfox swagger官方Starter-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-boot-starter</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <!-- Java Document Generate -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <phase>prepare-package</phase>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <!-- YUI Compressor (CSS/JS压缩) -->
+                <plugin>
+                    <groupId>net.alchim31.maven</groupId>
+                    <artifactId>yuicompressor-maven-plugin</artifactId>
+                    <version>1.5.1</version>
+                    <executions>
+                        <execution>
+                            <phase>prepare-package</phase>
+                            <goals>
+                                <goal>compress</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <encoding>UTF-8</encoding>
+                        <jswarn>false</jswarn>
+                        <nosuffix>true</nosuffix>
+                        <linebreakpos>30000</linebreakpos>
+                        <force>true</force>
+                        <includes>
+                            <include>**/*.js</include>
+                            <include>**/*.css</include>
+                        </includes>
+                        <excludes>
+                            <exclude>**/*.min.js</exclude>
+                            <exclude>**/*.min.css</exclude>
+                        </excludes>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <!-- 资源文件配置 -->
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+    </build>
+    <repositories>
+
+        <repository>
+            <id>aliyun-repos</id>
+            <name>Aliyun Repository</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+
+        <repository>
+            <id>sonatype-repos</id>
+            <name>Sonatype Repository</name>
+            <url>https://oss.sonatype.org/content/groups/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>sonatype-repos-s</id>
+            <name>Sonatype Repository</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+
+        <repository>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>https://repo.spring.io/snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>aliyun-repos</id>
+            <name>Aliyun Repository</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+</project>

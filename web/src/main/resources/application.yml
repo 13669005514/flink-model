@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: web
+  jmx:
+    enabled: false
+  servlet:
+    multipart:
+      max-file-size: 200MB
+      max-request-size: 200MB
+  profiles:
+    active: dev
+server:
+  port: 8088
+
+mybatis-plus:
+   mapper-locations: classpath:mybatis/mapper/*.xml
+   global-config:
+      db-config:
+        logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+        logic-not-delete-value: 0 #逻辑未删除值(默认为 0)
+   configuration:
+     call-setters-on-nulls: true
+logging:
+  level:
+    com:
+      supermap:
+        model:
+          mapper: debug
